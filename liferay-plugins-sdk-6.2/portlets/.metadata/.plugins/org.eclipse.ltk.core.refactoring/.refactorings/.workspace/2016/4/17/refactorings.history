@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ScienceApp-portlet&apos;" deleteContents="false" description="Delete resource &apos;ScienceApp-portlet&apos;" element1="/ScienceApp-portlet" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1461129823268"/>&#x0A;<refactoring comment="Delete resource &apos;ScienceAppEngine-portlet.bak&apos;" deleteContents="false" description="Delete resource &apos;ScienceAppEngine-portlet.bak&apos;" element1="/ScienceAppEngine-portlet.bak" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1461129827771"/>
+</session>

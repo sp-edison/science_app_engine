@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="science.platform.model.impl.SpAffiliationModelImpl">
+		<attributes>
+			<id name="spAffiliationId" />
+			<basic name="spRegionId" />
+			<basic name="spCountryId" />
+			<basic name="spAffiliationCode" />
+			<basic name="spAffiliationName" />
+			<basic name="spActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="spAffiliationNameCurrentLanguageId" />
+			<transient name="spAffiliationNameMap" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="science.platform.model.impl.SpDomainModelImpl">
+		<attributes>
+			<id name="spDomainId" />
+			<basic name="spDomainCode" />
+			<basic name="spDomainName" />
+			<basic name="spActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="spDomainNameCurrentLanguageId" />
+			<transient name="spDomainNameMap" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="science.platform.model.impl.SpRegionModelImpl">
+		<attributes>
+			<id name="spRegionId" />
+			<basic name="spCountryId" />
+			<basic name="spRegionCode" />
+			<basic name="spRegionName" />
+			<basic name="spActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="spRegionNameCurrentLanguageId" />
+			<transient name="spRegionNameMap" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="science.platform.model.impl.SpUserModelImpl">
+		<attributes>
+			<id name="spUserId" />
+			<basic name="spCountryId" />
+			<basic name="spRegionId" />
+			<basic name="spAffiliationId" />
+			<basic name="spUserFullName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="spUserFullNameCurrentLanguageId" />
+			<transient name="spUserFullNameMap" />
+			<transient name="spUserUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="science.platform.model.impl.SpUserDomainModelImpl">
+		<attributes>
+			<id name="spUserDomainId" />
+			<basic name="spDomainId" />
+			<basic name="spUserId" />
+			<basic name="apActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="spUserUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="science.platform.model.impl.SystemPropertiesModelImpl">
+		<attributes>
+			<id name="propertyName" />
+			<basic name="propertyValue" />
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="science.platform.model.impl.SpAffiliationImpl" name="SpAffiliation">
+		<table name="SciencePlatformHook_SpAffiliation" />
+		<attributes />
+	</entity>
+	<entity class="science.platform.model.impl.SpDomainImpl" name="SpDomain">
+		<table name="SciencePlatformHook_SpDomain" />
+		<attributes />
+	</entity>
+	<entity class="science.platform.model.impl.SpRegionImpl" name="SpRegion">
+		<table name="SciencePlatformHook_SpRegion" />
+		<attributes />
+	</entity>
+	<entity class="science.platform.model.impl.SpUserImpl" name="SpUser">
+		<table name="SciencePlatformHook_SpUser" />
+		<attributes />
+	</entity>
+	<entity class="science.platform.model.impl.SpUserDomainImpl" name="SpUserDomain">
+		<table name="SciencePlatformHook_SpUserDomain" />
+		<attributes />
+	</entity>
+	<entity class="science.platform.model.impl.SystemPropertiesImpl" name="SystemProperties">
+		<table name="SciencePlatformHook_SystemProperties" />
+		<attributes />
+	</entity>
+</entity-mappings>

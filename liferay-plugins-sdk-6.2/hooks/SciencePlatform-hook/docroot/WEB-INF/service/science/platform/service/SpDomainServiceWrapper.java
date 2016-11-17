@@ -1,0 +1,129 @@
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package science.platform.service;
+
+import com.liferay.portal.service.ServiceWrapper;
+
+/**
+ * Provides a wrapper for {@link SpDomainService}.
+ *
+ * @author Jerry h. Seo
+ * @see SpDomainService
+ * @generated
+ */
+public class SpDomainServiceWrapper implements SpDomainService,
+	ServiceWrapper<SpDomainService> {
+	public SpDomainServiceWrapper(SpDomainService spDomainService) {
+		_spDomainService = spDomainService;
+	}
+
+	/**
+	* Returns the Spring bean ID for this bean.
+	*
+	* @return the Spring bean ID for this bean
+	*/
+	@Override
+	public java.lang.String getBeanIdentifier() {
+		return _spDomainService.getBeanIdentifier();
+	}
+
+	/**
+	* Sets the Spring bean ID for this bean.
+	*
+	* @param beanIdentifier the Spring bean ID for this bean
+	*/
+	@Override
+	public void setBeanIdentifier(java.lang.String beanIdentifier) {
+		_spDomainService.setBeanIdentifier(beanIdentifier);
+	}
+
+	@Override
+	public java.lang.Object invokeMethod(java.lang.String name,
+		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
+		throws java.lang.Throwable {
+		return _spDomainService.invokeMethod(name, parameterTypes, arguments);
+	}
+
+	@Override
+	public science.platform.model.SpDomain createSpDomain(
+		java.lang.String domainCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _spDomainService.createSpDomain(domainCode);
+	}
+
+	@Override
+	public void addUserDomain(long userId, long domainId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		_spDomainService.addUserDomain(userId, domainId);
+	}
+
+	@Override
+	public void addUserDomains(long userId, long[] domainIds)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		_spDomainService.addUserDomains(userId, domainIds);
+	}
+
+	@Override
+	public java.util.List<science.platform.model.SpDomain> getAll()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _spDomainService.getAll();
+	}
+
+	@Override
+	public com.liferay.portal.kernel.json.JSONArray getAllDomainsJSON(
+		java.util.Locale locale)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _spDomainService.getAllDomainsJSON(locale);
+	}
+
+	@Override
+	public com.liferay.portal.kernel.json.JSONArray getDomainNamesByUserId(
+		long userId, java.util.Locale locale)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _spDomainService.getDomainNamesByUserId(userId, locale);
+	}
+
+	@Override
+	public boolean isExist(java.lang.String domainCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _spDomainService.isExist(domainCode);
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
+	 */
+	public SpDomainService getWrappedSpDomainService() {
+		return _spDomainService;
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
+	 */
+	public void setWrappedSpDomainService(SpDomainService spDomainService) {
+		_spDomainService = spDomainService;
+	}
+
+	@Override
+	public SpDomainService getWrappedService() {
+		return _spDomainService;
+	}
+
+	@Override
+	public void setWrappedService(SpDomainService spDomainService) {
+		_spDomainService = spDomainService;
+	}
+
+	private SpDomainService _spDomainService;
+}

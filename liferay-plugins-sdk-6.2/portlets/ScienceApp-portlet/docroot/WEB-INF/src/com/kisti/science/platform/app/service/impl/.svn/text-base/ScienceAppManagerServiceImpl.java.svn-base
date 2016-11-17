@@ -1,0 +1,781 @@
+/**
+ * Copyright (c) 2016-present EDISON, KISTI. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package com.kisti.science.platform.app.service.impl;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.util.List;
+import java.util.Properties;
+
+import ch.ethz.ssh2.Connection;
+import ch.ethz.ssh2.Session;
+import ch.ethz.ssh2.StreamGobbler;
+
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelExec;
+import com.jcraft.jsch.JSch;
+import com.kisti.science.platform.app.NoSuchManagerException;
+import com.kisti.science.platform.app.model.ScienceAppManager;
+import com.kisti.science.platform.app.service.ScienceAppManagerServiceUtil;
+import com.kisti.science.platform.app.service.base.ScienceAppManagerServiceBaseImpl;
+import com.kisti.science.platform.app.service.constants.ScienceAppConstants;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.service.ServiceContext;
+
+/**
+ * The implementation of the science app manager remote service.
+ *
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.kisti.science.platform.app.service.ScienceAppManagerService} interface.
+ *
+ * <p>
+ * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
+ * </p>
+ *
+ * @author Jerry H. Seo
+ * @see com.kisti.science.platform.app.service.base.ScienceAppManagerServiceBaseImpl
+ * @see com.kisti.science.platform.app.service.ScienceAppManagerServiceUtil
+ */
+public class ScienceAppManagerServiceImpl
+	extends ScienceAppManagerServiceBaseImpl {
+	public ScienceAppManager addScienceAppManager(
+			long managerId,
+			long scienceAppId,
+			ServiceContext sc ) throws SystemException{
+		long appManagerId = super.counterLocalService.increment();
+		ScienceAppManager manager = super.scienceAppManagerPersistence.create(appManagerId);
+		
+		manager.setManagerId(managerId);
+		manager.setScienceAppId(scienceAppId);
+		
+		manager.setCreateDate(sc.getCreateDate());
+		manager.setUserId(sc.getUserId());
+		
+		return manager;
+	}
+	
+	public void removeSicenceAppManager(long scienceAppManagerId) throws NoSuchManagerException, SystemException{
+		super.scienceAppManagerPersistence.remove(scienceAppManagerId);
+	}
+	
+	public void removeScienceAppManagerByManagerId(long managerId)  throws SystemException{
+		super.scienceAppManagerPersistence.removeByManagerId(managerId);
+	}
+	
+	public void removeScienceAppManagerByScienceAppId(long scienceAppId) throws SystemException{
+		super.scienceAppManagerPersistence.removeByAppId(scienceAppId);
+	}
+	
+	public void updateScienceAppManager(ScienceAppManager appManager) throws SystemException{
+		super.scienceAppManagerPersistence.update(appManager);
+	}
+	
+	public long[] getScienceAppIdsByManagerId(long managerId) throws SystemException{
+		List<ScienceAppManager> appManagers = super.scienceAppManagerPersistence.findByManagerId(managerId);
+		final int size = appManagers.size();
+		long[] scienceAppIds = new long[size];
+		
+		int index = 0;
+		for(ScienceAppManager appManager : appManagers){
+			scienceAppIds[index] = appManager.getScienceAppId();
+			index++;
+		}
+		
+		return scienceAppIds;
+	}
+	
+	public long[] getManagetIdsByScienceAppId(long scienceAppId) throws SystemException{
+		List<ScienceAppManager> appManagers = super.scienceAppManagerPersistence.findByAppId(scienceAppId);
+		final int size = appManagers.size();
+		long[] managerIds = new long[size];
+		
+		int index = 0;
+		for(ScienceAppManager appManager : appManagers){
+			managerIds[index] = appManager.getManagerId();
+			index++;
+		}
+		
+		return managerIds;
+	}
+	
+//	/*****
+//	 * Give execute permission to a given solver executable file
+//	 * 
+//	 * @param filePath
+//	 *            solver location
+//	 */
+//	public void changeExecPermission(String permission, String filePath) {
+//		// TODO Auto-generated method stub
+//		// change permission to the uploaded science app for execute
+//		//String command = "sudo chmod +" + permission + " " + filePath;
+//		String command = "sudo chmod +" + permission + " " + filePath;
+//		try {
+//			// Create a Runtime instance.
+//			Runtime rt = Runtime.getRuntime();
+//			// Execute the command.
+//			Process p1 = rt.exec(command);
+//System.out.println(command);
+//			// Read the input stream.
+//			InputStream instd = p1.getInputStream();
+//			// Create a buffered reader
+//			BufferedReader buf_reader = new BufferedReader(
+//					new InputStreamReader(instd));
+//			// Declare a temporary variable to contain a line.
+//			String line = "";
+//			// Declare a temporary variable to store a line count.
+//			// Begin to read each line from given output (or given file).
+//			while ((line = buf_reader.readLine()) != null) {
+//				// Increment line count.
+//				// System.out.println(line);
+//			}
+//			// Close the buffered reader instance.
+//			buf_reader.close();
+//			// Let's wait for the Runtime instance to be done.
+//			p1.waitFor();
+//
+//			InputStream errstd = p1.getErrorStream();
+//			BufferedReader buf_err_reader = new BufferedReader(
+//					new InputStreamReader(errstd));
+//			while ((line = buf_err_reader.readLine()) != null) {
+//				System.err.println(line);
+//			}
+//			buf_err_reader.close();
+//		} catch (Exception ex) {
+//			// ex.printStackTrace();
+//			// Print out any message when an error(s) occurs.
+//			System.err.println(ex.getMessage());
+//		}
+//	}
+
+
+//	/****
+//	 * Get an unzip directory path.
+//	 * @return
+//	 */
+//	private String getUnzipDirPath() {
+//		String strUnzipDirPath = "";
+//		Connection conn = null;
+//		Statement stmt = null;
+//		try{
+//			Class.forName(ScienceAppConstants.MYSQL_DRIVER_CLASS_NAME);
+//			conn = DriverManager.getConnection(ScienceAppConstants.connectString, ScienceAppConstants.userName, ScienceAppConstants.password);
+//			stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+//		} catch (SQLException sqlex) {
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//			System.exit(1); // programemer/dbsm error
+//		}
+//		
+//		ResultSet rs = null;
+//		try {
+//			rs = stmt.executeQuery("SELECT * FROM EDAPP_TEST_PATH");
+//			if(rs.next()){
+//				strUnzipDirPath = rs.getString(1);
+//			}
+//			rs.close();
+//			stmt.close();
+//			conn.close();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("unzip directory: " + strUnzipDirPath);
+//		return strUnzipDirPath;
+//	}
+
+	/***
+	 * Save uploaded file to new location
+	 * @param uploadedInputStream
+	 * @param uploadedFileLocation
+	 * @return
+	 */
+	public File saveToFile(InputStream uploadedInputStream,
+							String uploadedFileLocation) {
+		// Declare an output stream.
+		File newFile = null;
+		try {
+			OutputStream out = null;
+			// number of bytes read
+			int read = 0;
+			// 1024-byte buffer
+			byte[] bytes = new byte[1024];
+			// Assign file output stream.
+			newFile = new File(uploadedFileLocation);
+			out = new FileOutputStream(newFile);
+			// Read the file until no more bytes are read.
+			while ((read = uploadedInputStream.read(bytes)) != -1) {
+				// Write these bytes.
+				out.write(bytes, 0, read);
+			}
+			// Flush it.
+			out.flush();
+			// Close it.
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// allow for write and execute
+		executeCommand("sudo chmod 777 " + uploadedFileLocation);
+		return newFile;
+	}
+	
+	public String unzipSciAppZipFile(String strSciAppName, String strSciAppVer, File zipFile, String strZipRootDirName){
+		String message = "";
+///***
+// * test code for writing an uploaded zip file
+// */
+//String solverTestDirPath = Constants.SCIENCE_APP_PARENT_LOCATION;
+//// Create file input stream
+//FileInputStream uploadedInputStream = new FileInputStream(zipFile);
+//// Science App to be tested
+//Constants.SCIENCE_APP_UNDER_TEST_FULL_PATH = solverTestDirPath + strZipFileName;
+//// Save this file
+//saveToFile(uploadedInputStream, Constants.SCIENCE_APP_UNDER_TEST_FULL_PATH);
+//
+//// change the permission for execute
+//changeExecPermission("x", Constants.SCIENCE_APP_UNDER_TEST_FULL_PATH);
+//
+//File newFile = new File(Constants.SCIENCE_APP_UNDER_TEST_FULL_PATH);
+//if(!newFile.isFile() || newFile.length() == 0){
+//			message += Constants.FILE_OPEN_FAILURE;
+//}else{
+//			message = "Unzip Successful!";
+//}
+		// Let's start unzipping the uploaded file!
+		//get the zip file content
+		try{
+//ZipInputStream zis = new ZipInputStream(new FileInputStream(zipFile));
+////get the zipped file list entry
+//ZipEntry ze = zis.getNextEntry();
+//
+//while(ze != null){
+//	String fileName = ze.getName();
+//	File newFile = new File(unzipDirPath + Constants.FILE_SEPARATOR + fileName);
+//        
+//	System.out.println("file unzip : "+ newFile.getAbsoluteFile());
+//        
+//    // Let's first create all non exists folders.
+//    // Otherwise, we will hit FileNotFoundException for compressed folder
+//    new File(newFile.getParent()).mkdirs();
+//      
+//    FileOutputStream fos = new FileOutputStream(newFile);             
+//    byte[] buffer = new byte[1024];
+//    int len;
+//    while ((len = zis.read(buffer)) > 0) {
+//    	fos.write(buffer, 0, len);
+//    }
+//		
+//    fos.close();   
+//    ze = zis.getNextEntry();
+//}
+//
+//zis.closeEntry();
+//zis.close();
+			
+			String strZipFileName = zipFile.getName();
+System.out.println("src file size bytes:" + zipFile.length());
+System.out.println("src file name:" + zipFile.getName());
+			//String strUnzipDirName = ScienceAppConstants.BASE_LOCATION+strSciAppName+ScienceAppConstants.APP_TEST_DIR_NAME_SEPARATOR+strSciAppVer;
+			String strUnzipDirPath = ScienceAppConstants.BASE_LOCATION+strSciAppName+ScienceAppConstants.APP_TEST_DIR_NAME_SEPARATOR+ScienceAppConstants.APP_VER_PREFIX+strSciAppVer+ScienceAppConstants.APP_TEST_DIR_NAME_SEPARATOR;
+			//String strUnzippedSciAppDirPath = strUnzipDirPath+strSciAppName+ScienceAppConstants.APP_TEST_DIR_NAME_SEPARATOR;
+			String strUnzippedSciAppPath = strUnzipDirPath+strZipFileName;
+			
+			// make directory first
+			String msg = makeDir(strUnzipDirPath);
+			if(!msg.equalsIgnoreCase("")){
+				return msg;
+			}
+			
+			//String solverTestDirPath = Constants.SCIENCE_APP_PARENT_LOCATION;
+			// Create file input stream
+			FileInputStream uploadedInputStream = new FileInputStream(zipFile);
+			// Science App to be tested
+//			String zipFilePath = ScienceAppConstants.BASE_LOCATION + ; + ScienceAppConstants.FILE_SEPARATOR;// + strZipFileName;
+			// Save this file
+			saveToFile(uploadedInputStream, strUnzippedSciAppPath);
+			
+			File newZipFile = new File(strUnzippedSciAppPath);
+			if(!newZipFile.isFile() || newZipFile.length() == 0){
+				message += ScienceAppConstants.FILE_OPEN_FAILURE;
+				new Exception(message);
+			}
+			
+			String zipcommand = "";
+			if(strZipFileName.endsWith("gz")){
+				zipcommand = "cd " + strUnzipDirPath + "; tar -xvfz " + strZipFileName;
+			}else if(strZipFileName.endsWith("tar")){
+				zipcommand = "cd " + strUnzipDirPath + "; tar -xvf " + strZipFileName;
+			}else if(strZipFileName.endsWith("zip")){
+				zipcommand = "cd " + strUnzipDirPath + "; unzip -o " + strZipFileName + " -d " + strUnzipDirPath;
+			}else{
+				new Exception("file extension not ending with *.gz or *.zip");
+			}
+			String removeCommand = "rm -f " + strUnzippedSciAppPath;
+			zipcommand += "; " + removeCommand;
+System.out.println(zipcommand);
+			// unzip file
+			executeCommand(zipcommand);
+///***
+// * The code below should be replaced by the real routine to get the solver name from DB.
+// */
+//String zipRootDirName = uploadRequest.getParameter("zipRootDirName");
+//System.out.println("ziproot dir: " + zipRootDirName);
+///**
+// * zipped file's root directory
+// */
+//File zipRootDirFile = new File(zipFilePath+zipRootDirName);
+//if (zipRootDirFile == null || !zipRootDirFile.exists()) {
+//	executeCommand(removeCommand);
+//	message = "Check 1) your zip file or 2) the name of the root directory of that file that you just typed";
+//}else{
+//	message = "Unzip '" + zipFilePath+zipRootDirName + "' Successful!";
+//				}
+//System.out.println(message);
+			
+System.out.println("upload file name:"+strZipRootDirName);
+			String[] list = strZipRootDirName.split("\\.");
+			for(String str : list){
+System.out.println(str);
+				strZipRootDirName = str;
+				break;
+			}
+			String unzippedSciAppRootDirPath = strUnzipDirPath+strZipRootDirName;
+System.out.println("zip root dir:"+unzippedSciAppRootDirPath);
+			/**
+			 * zipped file's root directory
+			 */
+			File zipRootDirFile = new File(unzippedSciAppRootDirPath);
+			if (zipRootDirFile == null || !zipRootDirFile.exists()) {
+				ScienceAppManagerServiceUtil.executeCommand(removeCommand);
+				message = "Check 1) your zip file or 2) the name of the root directory of that file that you just typed";
+			}else{
+				message = "Unzip '" + strZipFileName + "' Successful!";
+			}
+		}catch(Exception ex){
+			message = ex.getMessage();
+		}		
+		return message;
+	}
+
+	/****
+	 * Execute a given command
+	 * @param command a given command
+	 * @return install message
+	 */
+	public String executeCommand(String command) {
+		String res = "";
+		//String command = zipCommand + " " + givenFile + targetDir;
+		String[] commandAndArgs = new String[]{ "/bin/sh", "-c", command};
+		//System.out.println(commandAndArgs);
+		// Get Runtime instance.
+		Runtime rt = Runtime.getRuntime();
+		// Declare a process.
+		Process p0 = null;
+		try {
+			// Let's execute the command.
+			p0 = rt.exec(commandAndArgs);
+			// Get any input stream.
+			InputStream instd = p0.getInputStream();
+			// Let's get it through buffered reader.
+			BufferedReader buf_reader = new BufferedReader(
+					new InputStreamReader(instd));
+			String temp = "";
+			// System.out.println("new line executed command: " + command);
+			while ((temp = buf_reader.readLine()) != null) {
+				// System.out.println("temp: " + temp);
+				//res += temp + "\n";
+			}
+			// Let's close buffered reader
+			buf_reader.close();
+
+			// Get any error stream.
+			InputStream errstd = p0.getErrorStream();
+			// Let's get it through buffered reader.
+			BufferedReader buf_err_reader = new BufferedReader(
+					new InputStreamReader(errstd));
+			// Initialize a temporary variable.
+			temp = "";
+			// Until there's no more error message,
+			while ((temp = buf_err_reader.readLine()) != null) {
+				// Append a current error message to the error message
+				// container.
+				res += temp + "\n";
+			}
+			// Report an error.
+			System.err.println(res);
+			// Close buffered error reader.
+			buf_err_reader.close();
+			// Let's wait p0 for completion.
+			p0.waitFor();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
+	/****
+	 * Create a directory
+	 * @param givenPath a given path
+	 * @return install message
+	 */
+	public String makeDir(String givenPath) {
+		String res = "";
+		String command = "sudo mkdir -p " + givenPath;
+System.out.println(givenPath);
+		String[] commandAndArgs = new String[]{ "/bin/sh", "-c", command};
+		// Get Runtime instance.
+		Runtime rt = Runtime.getRuntime();
+		// Declare a process.
+		Process p0 = null;
+		try {
+			// Let's execute the command.
+			p0 = rt.exec(commandAndArgs);
+			// Get any input stream.
+			InputStream instd = p0.getInputStream();
+			// Let's get it through buffered reader.
+			BufferedReader buf_reader = new BufferedReader(
+					new InputStreamReader(instd));
+			String temp = "";
+			// System.out.println("new line executed command: " + command);
+			while ((temp = buf_reader.readLine()) != null) {
+				// System.out.println("temp: " + temp);
+				//res += temp + "\n";
+			}
+			// Let's close buffered reader
+			buf_reader.close();
+
+			// Get any error stream.
+			InputStream errstd = p0.getErrorStream();
+			// Let's get it through buffered reader.
+			BufferedReader buf_err_reader = new BufferedReader(
+					new InputStreamReader(errstd));
+			// Initialize a temporary variable.
+			temp = "";
+			// Until there's no more error message,
+			while ((temp = buf_err_reader.readLine()) != null) {
+				// Append a current error message to the error message
+				// container.
+				res += temp + "\n";
+			}
+			// Report an error.
+			System.err.println(res);
+			// Close buffered error reader.
+			buf_err_reader.close();
+			// Let's wait p0 for completion.
+			p0.waitFor();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// allow for write
+		executeCommand("sudo chmod 777 " + givenPath);
+		return res;
+	}
+
+	public int checkAck(InputStream in) throws IOException {
+		int b = in.read();
+		// b may be 0 for success,
+		// 1 for error,
+		// 2 for fatal error,
+		// -1
+		if (b == 0)
+			return b;
+		if (b == -1)
+			return b;
+
+		if (b == 1 || b == 2) {
+			StringBuffer sb = new StringBuffer();
+			int c;
+			do {
+				c = in.read();
+				sb.append((char) c);
+			} while (c != '\n');
+			if (b == 1) { // error
+				System.out.print(sb.toString());
+			}
+			if (b == 2) { // fatal error
+				System.out.print(sb.toString());
+			}
+		}
+		return b;
+	}
+
+	public String executeLibInstall(String uploadedLibFileLocation, String fileName){
+		String res = "";
+//		// Let's remember any output while being installed.
+//		//String normalOutput = "";
+////		String errorOutput = "";
+////		// Build a command for installing a given library.
+////		// String command = "sudo yum install " + fileDetail.getFileName();
+////		// String command = "cat " + uploadedFileLocation;
+//		String command = "sudo rpm -i " + uploadedLibFileLocation;
+//		// String command2 = "rpm --checksig " + uploadedFileLocation;
+//		// String command2 = "rpm -e " + uploadedFileLocation;
+//		// String command3 = "rpm -qpR " + uploadedFileLocation;
+//		// String command4 = "rpm -qa | grep -i"
+//		// String command = "more " + Constants.SAMPLE_MODULE_LIST_PATH;
+//		// Construct a command string.
+//		// String[] commandAndArgs = new String[]{ "/bin/sh", "-c", command};
+//		// Get Runtime instance.
+//		
+//		Runtime rt = Runtime.getRuntime();
+//		// Declare a process.
+//		Process p0 = null;
+//		try {
+//			// Let's execute the command.
+//			// p0 = rt.exec(commandAndArgs);
+//			// RPM installation
+//System.out.println(command);
+//			p0 = rt.exec(command);
+//			// Get any input stream.
+//			InputStream instd = p0.getInputStream();
+//			// Let's get it through buffered reader.
+//			BufferedReader buf_reader = new BufferedReader(
+//					new InputStreamReader(instd));
+//			String temp = "";
+//			// System.out.println("new line executed command: " + command);
+//			while ((temp = buf_reader.readLine()) != null) {
+//				// System.out.println("temp: " + temp);
+//				//res += temp + "\n";
+//			}
+//			// Let's close buffered reader
+//			buf_reader.close();
+//
+//			// Get any error stream.
+//			InputStream errstd = p0.getErrorStream();
+//			// Let's get it through buffered reader.
+//			BufferedReader buf_err_reader = new BufferedReader(
+//					new InputStreamReader(errstd));
+//			// Initialize a temporary variable.
+//			temp = "";
+//			// Until there's no more error message,
+//			while ((temp = buf_err_reader.readLine()) != null) {
+//				// Append a current error message to the error message
+//				// container.
+//				errorOutput += temp + "\n";
+//			}
+//// Report an error.
+//System.err.println(errorOutput);
+//			if(!errorOutput.equalsIgnoreCase("")){
+//				return errorOutput;
+//			}
+//			// Close buffered error reader.
+//			buf_err_reader.close();
+//			// Let's wait p0 for completion.
+//			p0.waitFor();
+//		} catch (IOException e){
+//			e.printStackTrace();
+//		} catch(InterruptedException e) {
+//			e.printStackTrace();
+//		}
+		
+		try {
+			String testHostName = "150.183.247.46";
+			int portNum = ScienceAppConstants.COMPUTE_HEAD_NODE_PORT;
+			String userName = "root";
+			String password = "ckdwh046!@";
+			
+			JSch jsch=new JSch();
+			com.jcraft.jsch.Session scp_session =jsch.getSession(userName, testHostName, portNum);
+			scp_session.setPassword(password);
+			
+			Properties config = new Properties();
+			config.put("StrictHostKeyChecking","no");
+			scp_session.setConfig(config);
+			scp_session.connect();
+			
+			boolean ptimestamp = true;
+
+			// exec 'scp -t rfile' remotely
+			String command = "scp " + (ptimestamp ? "-p" :"") +" -t "+ uploadedLibFileLocation;
+System.out.println(command);
+			Channel channel = scp_session.openChannel("exec");
+			((ChannelExec)channel).setCommand(command);
+
+			// get I/O streams for remote scp
+			OutputStream out=channel.getOutputStream();
+			InputStream in=channel.getInputStream();
+	
+			channel.connect();
+	
+			if(checkAck(in)!=0){
+				System.exit(0);
+			}
+
+			File _lfile = new File(uploadedLibFileLocation);
+
+			  if(ptimestamp){
+			    command="T "+(_lfile.lastModified()/1000)+" 0";
+			    // The access time should be sent here,
+			    // but it is not accessible with JavaAPI ;-<
+			    command+=(" "+(_lfile.lastModified()/1000)+" 0\n");
+			    out.write(command.getBytes()); out.flush();
+			    if(checkAck(in)!=0){
+			      System.exit(0);
+			    }
+			  }
+			
+			command = "sudo rpm -i " + fileName;
+//			// Create a Runtime instance.
+//			Runtime rt = Runtime.getRuntime();
+//			// Execute the command.
+//			Process p1 = rt.exec(command);
+//			// Read the input stream.
+//			InputStream instd = p1.getInputStream();
+//			// Create a buffered reader
+//			BufferedReader buf_reader = new BufferedReader(
+//					new InputStreamReader(instd));
+			/* Open an ssh connection */
+			Connection conn = new Connection(ScienceAppConstants.COMPUTE_HEAD_NODE_IP_ADDR, ScienceAppConstants.COMPUTE_HEAD_NODE_PORT);
+			/* Let's try to connect to the host.*/
+	        conn.connect();
+	        /* Check to see if a user gets authenticated by the host.*/
+	        try{
+	        	FileInputStream fs = new FileInputStream(new File("~/.ssh/id_rsa.pub"));
+	        	InputStreamReader isr = new InputStreamReader(fs);
+	        	BufferedReader buf_reader = new BufferedReader(isr);
+	        	StringBuffer sb = new StringBuffer();
+	        	String temp = "";
+	        	while((temp = buf_reader.readLine())!=null){
+	        		sb.append(temp);
+	        	}
+	        	buf_reader.close();
+	        	String publicKey = sb.toString();
+			    boolean isAuthenticated = conn.authenticateWithPublicKey("root", publicKey.toCharArray(), "ckdwh046!@");
+		        if (isAuthenticated == false) {
+		            return ScienceAppConstants.AUTH_FAILURE;
+		        }
+	        }catch (Exception ex){
+	        	ex.printStackTrace();
+	        }
+//	        boolean isAuthenticated = conn.authenticateWithPassword("root", "ckdwh046!@");
+//	        if (isAuthenticated == false) {
+//	            return ScienceAppConstants.AUTH_FAILURE;
+//	        }
+System.out.println(command);
+	        /* Open an ssh session*/
+			Session sess = conn.openSession();
+			/* Execute a command */
+			sess.execCommand(command);
+			
+			String normalOutput = "";
+			String errorOutput = "";
+			InputStream instd = new StreamGobbler(sess.getStdout());
+			BufferedReader buf_reader = new BufferedReader(new InputStreamReader(instd));
+			// Declare a temporary variable to contain a line.
+			String line = "";
+			while ((line = buf_reader.readLine()) != null) {
+				normalOutput += line +"\n";
+			}
+			buf_reader.close();
+			
+			//			BufferedReader buf_reader = new BufferedReader(new InputStreamReader(instd));
+			InputStream err_instd = new StreamGobbler(sess.getStderr());
+			BufferedReader buf_err_reader = new BufferedReader(new InputStreamReader(err_instd));
+			while ((line = buf_err_reader.readLine()) != null) {
+				errorOutput += line +"\n";
+			}
+			buf_err_reader.close();
+			
+			if(errorOutput.equalsIgnoreCase("")){
+				return "";
+			}else{
+				return errorOutput;
+			}
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return res;		
+	}
+	
+	public String remoteMakeDir(String hostName, String portNumber, String userID, String password){
+		String res ="";
+		
+		
+		return res;
+	}
+	
+	/*****
+	 * Install a library
+	 * @param libName library name
+	 * @param libFile library file
+	 * @return
+	 */
+	public String installLibFile(String libFileName, File libFile){
+		String res = "";
+		//String solverTestDirPath = Constants.SCIENCE_APP_PARENT_LOCATION + solverTestDirName;
+		// create lib directory for temporary use
+		String result = makeDir(ScienceAppConstants.INSTALL_LIB_PATH);
+		if(!result.equalsIgnoreCase("")){
+			res += ", Library Install Directory, named '"+ScienceAppConstants.INSTALL_LIB_PATH+"', cannot be created, due to '"+result+"'";
+		}
+		// System.out.println(uploadedFileLocation);
+		
+		// Specify a directory to store an uploaded library file.
+		String uploadedLibFileLocation = ScienceAppConstants.INSTALL_LIB_PATH + libFileName;
+System.out.println(uploadedLibFileLocation);
+
+		//Create file input stream
+		FileInputStream uploadedInputStream = null;
+		try {
+			uploadedInputStream = new FileInputStream(libFile);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		//Save this file
+		File newFile = saveToFile(uploadedInputStream, uploadedLibFileLocation);
+		if(!newFile.isFile() || newFile.length() == 0){
+			res += ", " + ScienceAppConstants.FILE_OPEN_FAILURE;
+			return res;
+		}
+//		//change the permission for execute
+//		changeExecPermission("x", uploadedLibFileLocation);
+
+		String output = executeLibInstall(uploadedLibFileLocation, libFileName);
+		
+		// If there's no error, then send the success message.
+		if (output.equalsIgnoreCase("")) {
+			res += "Successful Installation of '" + libFileName + "' !";
+		}
+		// If there's any error,
+		else {
+			res += ", Installation Error Occurred: " + output;
+		}
+		return res;
+	}
+//	private String getSolverDirName() {
+//		// Should be updated with the correct solver name
+//		String solverName = "yksuh";
+//		return solverName;
+//	}
+
+}

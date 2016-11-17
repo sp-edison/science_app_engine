@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="science.platform.service.SpAffiliationLocalService" class="science.platform.service.impl.SpAffiliationLocalServiceImpl" />
+	<bean id="science.platform.service.SpAffiliationService" class="science.platform.service.impl.SpAffiliationServiceImpl" />
+	<bean id="science.platform.service.persistence.SpAffiliationPersistence" class="science.platform.service.persistence.SpAffiliationPersistenceImpl" parent="basePersistence" />
+	<bean id="science.platform.service.SpDomainLocalService" class="science.platform.service.impl.SpDomainLocalServiceImpl" />
+	<bean id="science.platform.service.SpDomainService" class="science.platform.service.impl.SpDomainServiceImpl" />
+	<bean id="science.platform.service.persistence.SpDomainPersistence" class="science.platform.service.persistence.SpDomainPersistenceImpl" parent="basePersistence" />
+	<bean id="science.platform.service.SpRegionLocalService" class="science.platform.service.impl.SpRegionLocalServiceImpl" />
+	<bean id="science.platform.service.SpRegionService" class="science.platform.service.impl.SpRegionServiceImpl" />
+	<bean id="science.platform.service.persistence.SpRegionPersistence" class="science.platform.service.persistence.SpRegionPersistenceImpl" parent="basePersistence" />
+	<bean id="science.platform.service.SpUserLocalService" class="science.platform.service.impl.SpUserLocalServiceImpl" />
+	<bean id="science.platform.service.SpUserService" class="science.platform.service.impl.SpUserServiceImpl" />
+	<bean id="science.platform.service.persistence.SpUserPersistence" class="science.platform.service.persistence.SpUserPersistenceImpl" parent="basePersistence" />
+	<bean id="science.platform.service.SpUserDomainLocalService" class="science.platform.service.impl.SpUserDomainLocalServiceImpl" />
+	<bean id="science.platform.service.SpUserDomainService" class="science.platform.service.impl.SpUserDomainServiceImpl" />
+	<bean id="science.platform.service.persistence.SpUserDomainPersistence" class="science.platform.service.persistence.SpUserDomainPersistenceImpl" parent="basePersistence" />
+	<bean id="science.platform.service.SystemPropertiesLocalService" class="science.platform.service.impl.SystemPropertiesLocalServiceImpl" />
+	<bean id="science.platform.service.SystemPropertiesService" class="science.platform.service.impl.SystemPropertiesServiceImpl" />
+	<bean id="science.platform.service.persistence.SystemPropertiesPersistence" class="science.platform.service.persistence.SystemPropertiesPersistenceImpl" parent="basePersistence" />
+</beans>

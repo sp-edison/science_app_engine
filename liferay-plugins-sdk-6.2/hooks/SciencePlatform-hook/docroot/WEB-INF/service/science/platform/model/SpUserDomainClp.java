@@ -1,0 +1,396 @@
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package science.platform.model;
+
+import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.ProxyUtil;
+import com.liferay.portal.kernel.util.StringBundler;
+import com.liferay.portal.model.BaseModel;
+import com.liferay.portal.model.impl.BaseModelImpl;
+import com.liferay.portal.util.PortalUtil;
+
+import science.platform.service.ClpSerializer;
+import science.platform.service.SpUserDomainLocalServiceUtil;
+
+import java.io.Serializable;
+
+import java.lang.reflect.Method;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author Jerry h. Seo
+ */
+public class SpUserDomainClp extends BaseModelImpl<SpUserDomain>
+	implements SpUserDomain {
+	public SpUserDomainClp() {
+	}
+
+	@Override
+	public Class<?> getModelClass() {
+		return SpUserDomain.class;
+	}
+
+	@Override
+	public String getModelClassName() {
+		return SpUserDomain.class.getName();
+	}
+
+	@Override
+	public long getPrimaryKey() {
+		return _spUserDomainId;
+	}
+
+	@Override
+	public void setPrimaryKey(long primaryKey) {
+		setSpUserDomainId(primaryKey);
+	}
+
+	@Override
+	public Serializable getPrimaryKeyObj() {
+		return _spUserDomainId;
+	}
+
+	@Override
+	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
+		setPrimaryKey(((Long)primaryKeyObj).longValue());
+	}
+
+	@Override
+	public Map<String, Object> getModelAttributes() {
+		Map<String, Object> attributes = new HashMap<String, Object>();
+
+		attributes.put("spUserDomainId", getSpUserDomainId());
+		attributes.put("spDomainId", getSpDomainId());
+		attributes.put("spUserId", getSpUserId());
+		attributes.put("apActive", getApActive());
+
+		return attributes;
+	}
+
+	@Override
+	public void setModelAttributes(Map<String, Object> attributes) {
+		Long spUserDomainId = (Long)attributes.get("spUserDomainId");
+
+		if (spUserDomainId != null) {
+			setSpUserDomainId(spUserDomainId);
+		}
+
+		Long spDomainId = (Long)attributes.get("spDomainId");
+
+		if (spDomainId != null) {
+			setSpDomainId(spDomainId);
+		}
+
+		Long spUserId = (Long)attributes.get("spUserId");
+
+		if (spUserId != null) {
+			setSpUserId(spUserId);
+		}
+
+		Boolean apActive = (Boolean)attributes.get("apActive");
+
+		if (apActive != null) {
+			setApActive(apActive);
+		}
+	}
+
+	@Override
+	public long getSpUserDomainId() {
+		return _spUserDomainId;
+	}
+
+	@Override
+	public void setSpUserDomainId(long spUserDomainId) {
+		_spUserDomainId = spUserDomainId;
+
+		if (_spUserDomainRemoteModel != null) {
+			try {
+				Class<?> clazz = _spUserDomainRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSpUserDomainId", long.class);
+
+				method.invoke(_spUserDomainRemoteModel, spUserDomainId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getSpDomainId() {
+		return _spDomainId;
+	}
+
+	@Override
+	public void setSpDomainId(long spDomainId) {
+		_spDomainId = spDomainId;
+
+		if (_spUserDomainRemoteModel != null) {
+			try {
+				Class<?> clazz = _spUserDomainRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSpDomainId", long.class);
+
+				method.invoke(_spUserDomainRemoteModel, spDomainId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getSpUserId() {
+		return _spUserId;
+	}
+
+	@Override
+	public void setSpUserId(long spUserId) {
+		_spUserId = spUserId;
+
+		if (_spUserDomainRemoteModel != null) {
+			try {
+				Class<?> clazz = _spUserDomainRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSpUserId", long.class);
+
+				method.invoke(_spUserDomainRemoteModel, spUserId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getSpUserUuid() throws SystemException {
+		return PortalUtil.getUserValue(getSpUserId(), "uuid", _spUserUuid);
+	}
+
+	@Override
+	public void setSpUserUuid(String spUserUuid) {
+		_spUserUuid = spUserUuid;
+	}
+
+	@Override
+	public boolean getApActive() {
+		return _apActive;
+	}
+
+	@Override
+	public boolean isApActive() {
+		return _apActive;
+	}
+
+	@Override
+	public void setApActive(boolean apActive) {
+		_apActive = apActive;
+
+		if (_spUserDomainRemoteModel != null) {
+			try {
+				Class<?> clazz = _spUserDomainRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setApActive", boolean.class);
+
+				method.invoke(_spUserDomainRemoteModel, apActive);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	public BaseModel<?> getSpUserDomainRemoteModel() {
+		return _spUserDomainRemoteModel;
+	}
+
+	public void setSpUserDomainRemoteModel(BaseModel<?> spUserDomainRemoteModel) {
+		_spUserDomainRemoteModel = spUserDomainRemoteModel;
+	}
+
+	public Object invokeOnRemoteModel(String methodName,
+		Class<?>[] parameterTypes, Object[] parameterValues)
+		throws Exception {
+		Object[] remoteParameterValues = new Object[parameterValues.length];
+
+		for (int i = 0; i < parameterValues.length; i++) {
+			if (parameterValues[i] != null) {
+				remoteParameterValues[i] = ClpSerializer.translateInput(parameterValues[i]);
+			}
+		}
+
+		Class<?> remoteModelClass = _spUserDomainRemoteModel.getClass();
+
+		ClassLoader remoteModelClassLoader = remoteModelClass.getClassLoader();
+
+		Class<?>[] remoteParameterTypes = new Class[parameterTypes.length];
+
+		for (int i = 0; i < parameterTypes.length; i++) {
+			if (parameterTypes[i].isPrimitive()) {
+				remoteParameterTypes[i] = parameterTypes[i];
+			}
+			else {
+				String parameterTypeName = parameterTypes[i].getName();
+
+				remoteParameterTypes[i] = remoteModelClassLoader.loadClass(parameterTypeName);
+			}
+		}
+
+		Method method = remoteModelClass.getMethod(methodName,
+				remoteParameterTypes);
+
+		Object returnValue = method.invoke(_spUserDomainRemoteModel,
+				remoteParameterValues);
+
+		if (returnValue != null) {
+			returnValue = ClpSerializer.translateOutput(returnValue);
+		}
+
+		return returnValue;
+	}
+
+	@Override
+	public void persist() throws SystemException {
+		if (this.isNew()) {
+			SpUserDomainLocalServiceUtil.addSpUserDomain(this);
+		}
+		else {
+			SpUserDomainLocalServiceUtil.updateSpUserDomain(this);
+		}
+	}
+
+	@Override
+	public SpUserDomain toEscapedModel() {
+		return (SpUserDomain)ProxyUtil.newProxyInstance(SpUserDomain.class.getClassLoader(),
+			new Class[] { SpUserDomain.class }, new AutoEscapeBeanHandler(this));
+	}
+
+	@Override
+	public Object clone() {
+		SpUserDomainClp clone = new SpUserDomainClp();
+
+		clone.setSpUserDomainId(getSpUserDomainId());
+		clone.setSpDomainId(getSpDomainId());
+		clone.setSpUserId(getSpUserId());
+		clone.setApActive(getApActive());
+
+		return clone;
+	}
+
+	@Override
+	public int compareTo(SpUserDomain spUserDomain) {
+		long primaryKey = spUserDomain.getPrimaryKey();
+
+		if (getPrimaryKey() < primaryKey) {
+			return -1;
+		}
+		else if (getPrimaryKey() > primaryKey) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof SpUserDomainClp)) {
+			return false;
+		}
+
+		SpUserDomainClp spUserDomain = (SpUserDomainClp)obj;
+
+		long primaryKey = spUserDomain.getPrimaryKey();
+
+		if (getPrimaryKey() == primaryKey) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
+	@Override
+	public int hashCode() {
+		return (int)getPrimaryKey();
+	}
+
+	@Override
+	public String toString() {
+		StringBundler sb = new StringBundler(9);
+
+		sb.append("{spUserDomainId=");
+		sb.append(getSpUserDomainId());
+		sb.append(", spDomainId=");
+		sb.append(getSpDomainId());
+		sb.append(", spUserId=");
+		sb.append(getSpUserId());
+		sb.append(", apActive=");
+		sb.append(getApActive());
+		sb.append("}");
+
+		return sb.toString();
+	}
+
+	@Override
+	public String toXmlString() {
+		StringBundler sb = new StringBundler(16);
+
+		sb.append("<model><model-name>");
+		sb.append("science.platform.model.SpUserDomain");
+		sb.append("</model-name>");
+
+		sb.append(
+			"<column><column-name>spUserDomainId</column-name><column-value><![CDATA[");
+		sb.append(getSpUserDomainId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>spDomainId</column-name><column-value><![CDATA[");
+		sb.append(getSpDomainId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>spUserId</column-name><column-value><![CDATA[");
+		sb.append(getSpUserId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>apActive</column-name><column-value><![CDATA[");
+		sb.append(getApActive());
+		sb.append("]]></column-value></column>");
+
+		sb.append("</model>");
+
+		return sb.toString();
+	}
+
+	private long _spUserDomainId;
+	private long _spDomainId;
+	private long _spUserId;
+	private String _spUserUuid;
+	private boolean _apActive;
+	private BaseModel<?> _spUserDomainRemoteModel;
+	private Class<?> _clpSerializerClass = science.platform.service.ClpSerializer.class;
+}

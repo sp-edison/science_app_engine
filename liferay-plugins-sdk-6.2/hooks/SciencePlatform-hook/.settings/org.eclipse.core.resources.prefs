@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//docroot/custom_jsps/html/portlet/login/create_account.jsp=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/create_account_user_name.jspf=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/create_account_user_name.portal.jspf=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/create_anonymous_account.jsp=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/login.jsp=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/login_redirect.jsp=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/navigation.jsp=UTF-8
+encoding//docroot/custom_jsps/html/portlet/login/navigation/create_account.jsp=UTF-8
+encoding/<project>=UTF-8

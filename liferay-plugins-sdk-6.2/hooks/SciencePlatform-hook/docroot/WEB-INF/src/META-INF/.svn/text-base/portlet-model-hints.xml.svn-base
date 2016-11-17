@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="science.platform.model.SpAffiliation">
+		<field name="spAffiliationId" type="long" />
+		<field name="spRegionId" type="long" />
+		<field name="spCountryId" type="long" />
+		<field name="spAffiliationCode" type="String" />
+		<field name="spAffiliationName" type="String" localized="true" />
+		<field name="spActive" type="boolean" />
+	</model>
+	<model name="science.platform.model.SpDomain">
+		<field name="spDomainId" type="long" />
+		<field name="spDomainCode" type="String" />
+		<field name="spDomainName" type="String" localized="true" />
+		<field name="spActive" type="boolean" />
+	</model>
+	<model name="science.platform.model.SpRegion">
+		<field name="spRegionId" type="long" />
+		<field name="spCountryId" type="long" />
+		<field name="spRegionCode" type="String" />
+		<field name="spRegionName" type="String" localized="true" />
+		<field name="spActive" type="boolean" />
+	</model>
+	<model name="science.platform.model.SpUser">
+		<field name="spUserId" type="long" />
+		<field name="spCountryId" type="long" />
+		<field name="spRegionId" type="long" />
+		<field name="spAffiliationId" type="long" />
+		<field name="spUserFullName" type="String" localized="true" />
+	</model>
+	<model name="science.platform.model.SpUserDomain">
+		<field name="spUserDomainId" type="long" />
+		<field name="spDomainId" type="long" />
+		<field name="spUserId" type="long" />
+		<field name="apActive" type="boolean" />
+	</model>
+	<model name="science.platform.model.SystemProperties">
+		<field name="propertyName" type="String" />
+		<field name="propertyValue" type="String" />
+		<field name="active" type="boolean" />
+	</model>
+</model-hints>

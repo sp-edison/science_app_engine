@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="science.platform">
+	<author>Jerry h. Seo</author>
+	<namespace>SciencePlatformHook</namespace>
+
+	<entity name="SpUser" local-service="true">
+		<!-- PK fields -->
+		<column name="spUserId" type="long" primary="true"></column>
+        <column name="spCountryId" type="long"></column>
+
+        <column name="spRegionId" type="long"></column>
+        <column name="spAffiliationId" type="long"></column>
+        <column name="spUserFullName" type="String" localized="true"></column>
+
+	</entity>
+	
+    <entity name="SpDomain" local-service="true">
+        <column name="spDomainId" primary="true" type="long"></column>
+        <column name="spDomainCode" type="String"></column>
+        <column name="spDomainName" type="String" localized="true"></column>
+        <column name="spActive" type="boolean"></column>
+        <finder name="DomainCode" return-type="SpDomain" unique="true">
+            <finder-column name="spDomainCode"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="SpRegion" local-service="true">
+        <column name="spRegionId" type="long" primary="true"></column>
+        <column name="spCountryId" primary="false" type="long"></column>
+        <column name="spRegionCode" type="String"></column>
+        <column name="spRegionName" type="String" localized="true"></column>
+        <column name="spActive" type="boolean"></column>
+        <finder name="CountryRegionCode" return-type="SpRegion" unique="true">
+            <finder-column name="spCountryId"></finder-column>
+            <finder-column name="spRegionCode"></finder-column>
+        </finder>
+        <finder name="CountryId" return-type="Collection">
+            <finder-column name="spCountryId"></finder-column>
+        </finder>
+        <finder name="CountryRegion" return-type="SpRegion">
+            <finder-column name="spCountryId"></finder-column>
+            <finder-column name="spRegionId"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="SpAffiliation" local-service="true">
+        <column name="spAffiliationId" type="long" primary="true"></column>
+        <column name="spRegionId" type="long"></column>
+        <column name="spCountryId" type="long"></column>
+        <column name="spAffiliationCode" type="String"></column>
+        <column name="spAffiliationName" type="String" localized="true"></column>
+        <column name="spActive" type="boolean"></column>
+        <order by="asc">
+            <order-column name="spAffiliationName" order-by="asc"></order-column>
+        </order>
+        <finder name="AffiliationCode" return-type="SpAffiliation" unique="true">
+            <finder-column name="spRegionId"></finder-column>
+            <finder-column name="spAffiliationCode"></finder-column>
+        </finder>
+        <finder name="CountryId" return-type="Collection">
+            <finder-column name="spCountryId"></finder-column>
+        </finder>
+        <finder name="RegionId" return-type="Collection">
+            <finder-column name="spRegionId"></finder-column>
+        </finder>
+    </entity>
+    
+    <entity name="SpUserDomain" local-service="true">
+        <column name="spUserDomainId" primary="true" type="long"></column>
+        <column name="spDomainId" type="long"></column>
+        <column name="spUserId" type="long"></column>
+        <column name="apActive" type="boolean"></column>
+        <finder name="SpUserId" return-type="Collection">
+            <finder-column name="spUserId"></finder-column>
+        </finder>
+        <finder name="SpDomainId" return-type="Collection">
+            <finder-column name="spDomainId"></finder-column>
+        </finder>
+        <finder name="SpUserDomainId" return-type="SpUserDomain" unique="true">
+            <finder-column name="spUserId"></finder-column>
+            <finder-column name="spDomainId"></finder-column>
+        </finder>
+    </entity>
+        
+    <entity name="SystemProperties" local-service="true">
+
+    	<!-- PK fields -->
+
+    	<!-- Group instance -->
+
+    	<!-- Audit fields -->
+        <column name="propertyName" type="String" primary="true"></column>
+        <column name="propertyValue" type="String"></column>
+        <column name="active" type="boolean"></column>
+    </entity>
+    
+</service-builder>

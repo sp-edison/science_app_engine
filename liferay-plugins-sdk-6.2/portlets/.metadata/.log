@@ -1,0 +1,634 @@
+!SESSION 2016-04-20 14:22:16.047 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/yksuh/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -keyring /Users/yksuh/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-04-20 14:22:35.451
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2016-04-20 14:22:35.865
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-20 14:22:35.865
+!MESSAGE A conflict occurred for ALT+COMMAND+N:
+Binding(ALT+COMMAND+N,
+	ParameterizedCommand(Command(com.liferay.ide.portlet.ui.buildLang,Build Languages,
+		Run the build-lang command,
+		Category(com.liferay.ide.project.ui.handlers,Liferay Commands,Liferay Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@711c9888,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+N,
+	ParameterizedCommand(Command(org.eclipse.ui.file.newQuickMenu,New menu,
+		Open the New menu,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@c6242bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-20 14:22:35.865
+!MESSAGE A conflict occurred for ALT+COMMAND+W:
+Binding(ALT+COMMAND+W,
+	ParameterizedCommand(Command(com.liferay.ide.service.ui.buildWSDD,Build WSDD,
+		Run the build-wsdd command,
+		Category(com.liferay.ide.project.ui.handlers,Liferay Commands,Liferay Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@70b4afe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+W,
+	ParameterizedCommand(Command(org.eclipse.ui.navigate.showInQuickMenu,Show In...,
+		Open the Show In menu,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@76686d4e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-20 14:22:35.865
+!MESSAGE A conflict occurred for ALT+COMMAND+V:
+Binding(ALT+COMMAND+V,
+	ParameterizedCommand(Command(com.liferay.ide.service.ui.buildService,Build Service,
+		Run the build-service command,
+		Category(com.liferay.ide.project.ui.handlers,Liferay Commands,Liferay Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41e0589d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+COMMAND+V,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.move.element,Move - Refactoring ,
+		Move the selected element to a new location,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6fd9cd34,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-20 14:22:35.865
+!MESSAGE A conflict occurred for ALT+CTRL+P:
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.CreatePatchCommand,Create Patch...,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@442f4a4a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+P,
+	ParameterizedCommand(Command(org.eclipse.m2e.profiles.ui.commands.selectMavenProfileCommand,Select Maven Profiles,
+		,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7cb6633e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.apache.ivyde.eclipse 1 0 2016-04-20 14:22:45.005
+!MESSAGE starting IvyDE plugin
+
+!ENTRY org.apache.ivyde.eclipse 1 0 2016-04-20 14:22:45.021
+!MESSAGE IvyDE plugin started
+
+!ENTRY org.apache.ivyde.eclipse 2 0 2016-04-20 14:22:57.754
+!MESSAGE IvyDE container states of the project ScienceApp-portlet doesn't exist.
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:22:58.078
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.tigris.subversion.clientadapter.javahl 1 0 2016-04-20 14:23:01.513
+!MESSAGE Failed to load JavaHL Library.
+These are the errors that were encountered:
+no libsvnjavahl-1 in java.library.path
+no svnjavahl-1 in java.library.path
+no svnjavahl in java.library.path
+java.library.path = /Users/yksuh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:04.689
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:08.629
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:08.630
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 0
+org.eclipse.team.svn.core.connector.SVNConnectorException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.polarion.team.svn.connector.svnkit.SVNKitService.handleClientException(SVNKitService.java:59)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:595)
+	at org.eclipse.team.svn.core.extension.factory.ThreadNameModifier.status(ThreadNameModifier.java:629)
+	at org.eclipse.team.svn.core.utility.SVNUtility.status(SVNUtility.java:303)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getStatuses(SVNRemoteStorage.java:891)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:807)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:684)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:403)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChangedImpl(AbstractSVNSubscriber.java:310)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChanged(AbstractSVNSubscriber.java:256)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$3.runImpl(SVNRemoteStorage.java:211)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:60)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.apache.subversion.javahl.ClientException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.apache.subversion.javahl.ClientException.fromException(ClientException.java:68)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.getClientException(SVNClientImpl.java:1278)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:260)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:590)
+	... 17 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:735)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.internal.wc16.SVNStatusClient16.doStatus(SVNStatusClient16.java:430)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:22)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:1)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:20)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1252)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:258)
+	... 18 more
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:08.861
+!MESSAGE SVN: '0x00000111: Get Resource List' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:08.862
+!MESSAGE Get all resources operation failed.
+!STACK 0
+org.eclipse.team.svn.core.connector.SVNConnectorException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.polarion.team.svn.connector.svnkit.SVNKitService.handleClientException(SVNKitService.java:59)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:595)
+	at org.eclipse.team.svn.core.extension.factory.ThreadNameModifier.status(ThreadNameModifier.java:629)
+	at org.eclipse.team.svn.core.utility.SVNUtility.status(SVNUtility.java:303)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getStatuses(SVNRemoteStorage.java:891)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:807)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:684)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:403)
+	at org.eclipse.team.svn.core.operation.local.GetAllResourcesOperation.runImpl(GetAllResourcesOperation.java:37)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternalDefault(ProgressMonitorUtility.java:77)
+	at org.eclipse.team.svn.core.svnstorage.SVNLocalFolder.getChildren(SVNLocalFolder.java:42)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$5.processEntry(SVNRemoteStorage.java:868)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$5.runImpl(SVNRemoteStorage.java:845)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:60)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.apache.subversion.javahl.ClientException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.apache.subversion.javahl.ClientException.fromException(ClientException.java:68)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.getClientException(SVNClientImpl.java:1278)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:260)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:590)
+	... 23 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:735)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.internal.wc16.SVNStatusClient16.doStatus(SVNStatusClient16.java:430)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:22)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:1)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:20)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1252)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:258)
+	... 24 more
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-04-20 14:23:09.934
+!MESSAGE org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:101)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.refreshStatus(StatusCacheManager.java:298)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.refreshStatus(FileModificationManager.java:179)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.resourceChanged(FileModificationManager.java:128)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run(NotificationManager.java:40)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.status.NonRecursiveStatusUpdateStrategy.statusesToUpdate(NonRecursiveStatusUpdateStrategy.java:60)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.refreshStatus(StatusCacheManager.java:273)
+	... 11 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.svnkit.SvnKitClientAdapter.getStatus(SvnKitClientAdapter.java:144)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:507)
+	at org.tigris.subversion.subclipse.core.status.NonRecursiveStatusUpdateStrategy.statusesToUpdate(NonRecursiveStatusUpdateStrategy.java:55)
+	... 12 more
+Caused by: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.javahl.JavaHLObjectFactory.throwException(JavaHLObjectFactory.java:778)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.throwException(SVNClientImpl.java:1850)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:300)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:278)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 16 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:719)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.wc.SVNStatusClient.doStatus(SVNStatusClient.java:380)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:296)
+	... 18 more
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 -6 2016-04-20 14:23:09.935
+!MESSAGE org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.status.NonRecursiveStatusUpdateStrategy.statusesToUpdate(NonRecursiveStatusUpdateStrategy.java:60)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.refreshStatus(StatusCacheManager.java:273)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.refreshStatus(FileModificationManager.java:179)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.resourceChanged(FileModificationManager.java:128)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run(NotificationManager.java:40)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.svnkit.SvnKitClientAdapter.getStatus(SvnKitClientAdapter.java:144)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:507)
+	at org.tigris.subversion.subclipse.core.status.NonRecursiveStatusUpdateStrategy.statusesToUpdate(NonRecursiveStatusUpdateStrategy.java:55)
+	... 12 more
+Caused by: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.javahl.JavaHLObjectFactory.throwException(JavaHLObjectFactory.java:778)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.throwException(SVNClientImpl.java:1850)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:300)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:278)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 16 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:719)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.wc.SVNStatusClient.doStatus(SVNStatusClient.java:380)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:296)
+	... 18 more
+!SUBENTRY 2 org.tigris.subversion.subclipse.core 4 -6 2016-04-20 14:23:09.936
+!MESSAGE org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.svnkit.SvnKitClientAdapter.getStatus(SvnKitClientAdapter.java:144)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:507)
+	at org.tigris.subversion.subclipse.core.status.NonRecursiveStatusUpdateStrategy.statusesToUpdate(NonRecursiveStatusUpdateStrategy.java:55)
+	at org.tigris.subversion.subclipse.core.status.StatusCacheManager.refreshStatus(StatusCacheManager.java:273)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.refreshStatus(FileModificationManager.java:179)
+	at org.tigris.subversion.subclipse.core.resourcesListeners.FileModificationManager.resourceChanged(FileModificationManager.java:128)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2322)
+	at org.eclipse.core.internal.events.NotificationManager$NotifyJob.run(NotificationManager.java:40)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tigris.subversion.javahl.JavaHLObjectFactory.throwException(JavaHLObjectFactory.java:778)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.throwException(SVNClientImpl.java:1850)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:300)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:278)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 16 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:719)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.wc.SVNStatusClient.doStatus(SVNStatusClient.java:380)
+	at org.tmatesoft.svn.core.javahl.SVNClientImpl.status(SVNClientImpl.java:296)
+	... 18 more
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:09.976
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:09.976
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 0
+org.eclipse.team.svn.core.connector.SVNConnectorException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.polarion.team.svn.connector.svnkit.SVNKitService.handleClientException(SVNKitService.java:59)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:595)
+	at org.eclipse.team.svn.core.extension.factory.ThreadNameModifier.status(ThreadNameModifier.java:629)
+	at org.eclipse.team.svn.core.utility.SVNUtility.status(SVNUtility.java:303)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getStatuses(SVNRemoteStorage.java:891)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:807)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:684)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:403)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChangedImpl(AbstractSVNSubscriber.java:310)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChanged(AbstractSVNSubscriber.java:256)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$3.runImpl(SVNRemoteStorage.java:211)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:60)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.apache.subversion.javahl.ClientException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.apache.subversion.javahl.ClientException.fromException(ClientException.java:68)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.getClientException(SVNClientImpl.java:1278)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:260)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:590)
+	... 17 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:735)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.internal.wc16.SVNStatusClient16.doStatus(SVNStatusClient16.java:430)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:22)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:1)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:20)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1252)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:258)
+	... 18 more
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:11.500
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:11.500
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 0
+org.eclipse.team.svn.core.connector.SVNConnectorException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.polarion.team.svn.connector.svnkit.SVNKitService.handleClientException(SVNKitService.java:59)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:595)
+	at org.eclipse.team.svn.core.extension.factory.ThreadNameModifier.status(ThreadNameModifier.java:629)
+	at org.eclipse.team.svn.core.utility.SVNUtility.status(SVNUtility.java:303)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getStatuses(SVNRemoteStorage.java:891)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:807)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:684)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:403)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChangedImpl(AbstractSVNSubscriber.java:310)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChanged(AbstractSVNSubscriber.java:256)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$3.runImpl(SVNRemoteStorage.java:211)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:60)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.apache.subversion.javahl.ClientException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.apache.subversion.javahl.ClientException.fromException(ClientException.java:68)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.getClientException(SVNClientImpl.java:1278)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:260)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:590)
+	... 17 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:735)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.internal.wc16.SVNStatusClient16.doStatus(SVNStatusClient16.java:430)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:22)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:1)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:20)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1252)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:258)
+	... 18 more
+
+!ENTRY org.eclipse.core.resources 4 2 2016-04-20 14:23:11.955
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2016-04-20 14:23:12.026
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.common.project.facet.core 4 75 2016-04-20 14:23:12.026
+!MESSAGE Errors running builder 'Faceted Project Validation Builder' on project 'ScienceApp-portlet'.
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:13.022
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2016-04-20 14:23:13.022
+!MESSAGE SVN: '0x00400001: Check cache before repaint' operation finished with error: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+!STACK 0
+org.eclipse.team.svn.core.connector.SVNConnectorException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.polarion.team.svn.connector.svnkit.SVNKitService.handleClientException(SVNKitService.java:59)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:595)
+	at org.eclipse.team.svn.core.extension.factory.ThreadNameModifier.status(ThreadNameModifier.java:629)
+	at org.eclipse.team.svn.core.utility.SVNUtility.status(SVNUtility.java:303)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getStatuses(SVNRemoteStorage.java:891)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:807)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:684)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:403)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChangedImpl(AbstractSVNSubscriber.java:310)
+	at org.eclipse.team.svn.core.synchronize.AbstractSVNSubscriber.resourcesStateChanged(AbstractSVNSubscriber.java:256)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$3.runImpl(SVNRemoteStorage.java:211)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:82)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:40)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:104)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:90)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:60)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:58)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.apache.subversion.javahl.ClientException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.apache.subversion.javahl.ClientException.fromException(ClientException.java:68)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.getClientException(SVNClientImpl.java:1278)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:260)
+	at org.polarion.team.svn.connector.svnkit.SVNKitConnector.status(SVNKitConnector.java:590)
+	... 17 more
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E155005: Directory '/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/ScienceApp-portlet/docroot/WEB-INF/classes/.svn' containing working copy admin area is missing
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.wc.admin.SVNWCAccess.retrieve(SVNWCAccess.java:735)
+	at org.tmatesoft.svn.core.internal.wc.SVNStatusEditor.closeEdit(SVNStatusEditor.java:106)
+	at org.tmatesoft.svn.core.internal.wc16.SVNStatusClient16.doStatus(SVNStatusClient16.java:430)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:22)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldGetStatus.run(SvnOldGetStatus.java:1)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:20)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1252)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at org.tmatesoft.svn.core.javahl17.SVNClientImpl.status(SVNClientImpl.java:258)
+	... 18 more
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:15.222
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:15.346
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:15.437
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:16.788
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:16.881
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:16.963
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:21.955
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.apache.ivyde.eclipse 2 0 2016-04-20 14:23:21.962
+!MESSAGE IvyDE container states of the project ScienceAppEngine-portlet.bak doesn't exist.
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:22.223
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.apache.ivyde.eclipse 4 4 2016-04-20 14:23:23.088
+!MESSAGE Some projects fail to be resolved
+!SUBENTRY 1 org.apache.ivyde.eclipse 4 0 2016-04-20 14:23:23.088
+!MESSAGE Failed to configure Ivy for ivy.xml[*] in ScienceAppEngine-portlet.bakError while resolving the ivy instance for ivy.xml[*] in 'ScienceAppEngine-portlet.bak':
+  The Ivy settings file '/ivy-settings.xml' cannot be found
+!STACK 0
+org.apache.ivyde.eclipse.IvyDEException: Error while resolving the ivy instance for ivy.xml[*] in 'ScienceAppEngine-portlet.bak':
+  The Ivy settings file '/ivy-settings.xml' cannot be found
+	at org.apache.ivyde.internal.eclipse.CachedIvy.getIvyFromFile(CachedIvy.java:192)
+	at org.apache.ivyde.internal.eclipse.CachedIvy.doGetIvy(CachedIvy.java:163)
+	at org.apache.ivyde.internal.eclipse.CachedIvy.getIvy(CachedIvy.java:124)
+	at org.apache.ivyde.internal.eclipse.resolve.IvyResolveJob.doRun(IvyResolveJob.java:145)
+	at org.apache.ivyde.internal.eclipse.resolve.IvyResolveJob.run(IvyResolveJob.java:85)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 2 2016-04-20 14:23:23.213
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2016-04-20 14:23:23.222
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.common.project.facet.core 4 75 2016-04-20 14:23:23.222
+!MESSAGE Errors running builder 'Faceted Project Validation Builder' on project 'ScienceAppEngine-portlet.bak'.
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:40.263
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:40.273
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY org.eclipse.core.resources 4 2 2016-04-20 14:23:43.863
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 75 2016-04-20 14:23:43.871
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.wst.common.project.facet.core 4 75 2016-04-20 14:23:43.871
+!MESSAGE Errors running builder 'Faceted Project Validation Builder' on project 'ScienceAppEngine-portlet.bak'.
+!STACK 0
+java.lang.ClassCastException: org.eclipse.wst.common.project.facet.core.runtime.internal.UnknownRuntime cannot be cast to org.eclipse.wst.common.project.facet.core.runtime.internal.BridgedRuntime
+	at com.liferay.ide.project.core.PluginsSDKProjectRuntimeValidator.validate(PluginsSDKProjectRuntimeValidator.java:68)
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProjectValidationBuilder.build(FacetedProjectValidationBuilder.java:132)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:45.758
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project
+
+!ENTRY com.liferay.ide.core 1 0 2016-04-20 14:23:45.759
+!MESSAGE No liferay project providers registered for type: class org.eclipse.core.internal.resources.Project

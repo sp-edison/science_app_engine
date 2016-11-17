@@ -1,0 +1,1 @@
+INDEX VERSION 1.127+/Users/yksuh/workspace/Edison/liferay-plugins-sdk-6.2/portlets/.metadata/.plugins/org.eclipse.jdt.core

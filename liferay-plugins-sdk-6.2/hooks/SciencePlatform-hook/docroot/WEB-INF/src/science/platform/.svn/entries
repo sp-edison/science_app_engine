@@ -1,0 +1,37 @@
+10
+
+dir
+162
+svn://150.183.247.199/jerry/branches/SciencePlatformHook/V0.5/SciencePlatform-hook/docroot/WEB-INF/src/science/platform
+svn://150.183.247.199/jerry
+
+
+
+2016-03-29T01:09:07.541713Z
+35
+jerry
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+77717b2a-4190-431e-927f-f3d1bd3466ae
+
+hook
+dir
+
+model
+dir
+
+service
+dir
+

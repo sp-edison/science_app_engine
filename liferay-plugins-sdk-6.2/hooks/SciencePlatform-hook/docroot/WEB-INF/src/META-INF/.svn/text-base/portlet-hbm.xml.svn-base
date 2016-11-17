@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="science.platform.model.SpAffiliation" />
+	<import class="science.platform.model.SpDomain" />
+	<import class="science.platform.model.SpRegion" />
+	<import class="science.platform.model.SpUser" />
+	<import class="science.platform.model.SpUserDomain" />
+	<import class="science.platform.model.SystemProperties" />
+	<class name="science.platform.model.impl.SpAffiliationImpl" table="SciencePlatformHook_SpAffiliation">
+		<cache usage="read-write" />
+		<id name="spAffiliationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="spRegionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spCountryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spAffiliationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spAffiliationName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="science.platform.model.impl.SpDomainImpl" table="SciencePlatformHook_SpDomain">
+		<cache usage="read-write" />
+		<id name="spDomainId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="spDomainCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spDomainName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="science.platform.model.impl.SpRegionImpl" table="SciencePlatformHook_SpRegion">
+		<cache usage="read-write" />
+		<id name="spRegionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="spCountryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spRegionCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spRegionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="spActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="science.platform.model.impl.SpUserImpl" table="SciencePlatformHook_SpUser">
+		<cache usage="read-write" />
+		<id name="spUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="spCountryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spRegionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spAffiliationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spUserFullName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="science.platform.model.impl.SpUserDomainImpl" table="SciencePlatformHook_SpUserDomain">
+		<cache usage="read-write" />
+		<id name="spUserDomainId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="spDomainId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="spUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="apActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="science.platform.model.impl.SystemPropertiesImpl" table="SciencePlatformHook_SystemProperties">
+		<cache usage="read-write" />
+		<id name="propertyName" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="propertyValue" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.BooleanType" column="active_" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+10
+
+dir
+162
+svn://150.183.247.199/jerry/branches/SciencePlatformHook/V0.5/SciencePlatform-hook/docroot
+svn://150.183.247.199/jerry
+
+
+
+2016-04-04T01:24:37.867296Z
+71
+jerry
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+77717b2a-4190-431e-927f-f3d1bd3466ae
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+custom_jsps
+dir
+
+images
+dir
+
